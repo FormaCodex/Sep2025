@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form - Text Input</title>
+<link rel=icon href=pin.jpg type=image/jpg>
+<meta name=viewport content=width=device-width, initial-scale=1.0>
+</head>
+
+<body topmargin=50>
+<center>
+<table style="text-align:left;background-color:powderblue;
+color:#696969;font-family:verdana;
+font-size:160%;
+text-align:center;
+width:60%;height:40%;">
+<tr>
+<td>
+First Name: 
+</td>
+<td>
+<input type=text name=fname placeholder='First Name' autofocus>
+</td>
+</tr>
+
+<tr>
+<td>
+Last Name:
+</td>
+<td>
+<input type=text name=lname placeholder='Last Name' autofocus>
+</td>
+</tr>
+
+<tr>
+<td>
+Gender:
+<input type=radio name=gender value=Male> Male
+<input type=radio name=gender value=Female> Female
+<input type=radio name=gender value=Enby> NB
+<input type=radio name=gender value=Gfluid> GenderFluid
+</td>
+</tr>
+
+<tr>
+<td>
+<input type=checkbox name=fav_sub value=DCS4103>DCS4103</br>
+<input type=checkbox name=fav_sub value=DCS3003 checked>DCS3003</br>
+<input type=checkbox name=fav_sub value=MST1003 disabled>MST1003</br>
+<input type=checkbox name=fav_sub value=MST2003>MST2003</br>
+</td>
+</tr>
+
+<tr>
+<td>
+Address: <textarea rows=4 cols=30 name=address></textarea>
+</td>
+</tr>
+
+<tr>
+<td>
+Date of Birth(DOB): <input type=date name=dob min=2000-01-01 max=2005-12-31>
+</td>
+</tr>
+
+<tr>
+<td>
+Login Password:
+<input type=password name=loginpass readonly> 
+</td>
+</tr>
+
+<tr>
+<td>
+Course:
+<select>
+<option value="0" selected>-List of Courses-</option>
+<option value="DCS">Diploma In Computer Science</option>
+<option value="DIB">Diploma in Business</option>
+<option value="DAS">Diploma In Airline Services</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<input type=submit value=Submit>
+<input type=reset value=Reset>
+</td></tr>
+
+</table>
+</center>
+</body>
+</html>
