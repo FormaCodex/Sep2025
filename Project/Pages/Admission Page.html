@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>S7SC Application Form</title>
+<link rel=icon href=S7SC.jpg type=image/jpg>
+<meta name="viewport" content=width=device-width, initial-scale=1.0">
+<style>
+table{background-color:LightSlateGray;color:white;font-family:Lucida Console;font-size:100%;text-align:left;width:75%;height:40%;font-stretch:wider; border-style:dashed; border-color:DarkSlateGray; border-width;5px;}
+body{margin-top:50; background-color:DarkSlateGray; text-align:center; border-style:solid; border-color:LightSlateGray; border-width:5px;}
+input{text-color:blue;text-align:center; border-style:dashed; border-color:blue; border-width;20px;}
+td{color:white;}
+h1{color:white;font-family:Lucida Console;text-align:center;}
+h1.bodytext{color:White;font-family:Lucida Console;background-color:SlateGray; text-align:left;}
+button{box-align:left;}
+</style>
+<script>
+
+
+const response = confirm("Do you want to head back to the homepage?");
+
+console.log(response);
+
+if (response) {
+	document.write("\n Heading back to homepage...");
+} else {
+	document.write("\nReturn cancelled.");
+	document.getElementById("username").disabled = true;
+}
+
+function validateForm(){
+	//to validate text- NO EMPTY
+	let x = document.MyFirstForm.fname.value;
+	if (x==""){
+		alert("Please provide your First Name. It is mandatory!");
+		return false;
+	}
+}
+function validateFormlname(){
+	//to validate text- NO EMPTY
+	let x = document.MyFirstForm.lname.value;
+	if (x==""){
+		alert("Please provide your Last Name. It is mandatory!");
+		return false;
+	}
+}
+function validateFormbothemptyname(){
+	//to validate text- NO EMPTY
+	let x = document.MyFirstForm.fname.value;
+	let y = document.MyFirstForm.lname.value;
+	if (x=="" and y==""){
+		alert("Please provide both your First Name and Last Name It is mandatory!");
+		return false;
+	}
+}
+function validateLettersfname(){
+	//to validate that names only have abcd and not !@#$24421
+	let x = document.MyFirstForm.fname.value;
+	var letters = /^[A-Za-z]/;
+	if (!x.match(letters)){
+		alert("Please use alphabetical letters for your First Name.");
+		return false;
+	}
+}
+function validateLetterslname(){
+	//to validate that names only have abcd and not !@#$24421
+	let y = document.MyFirstForm.lname.value;
+	var letters = /^[A-Za-z]/;
+	if (!y.match(letters)){
+		alert("Please use alphabetical letters for your Last Name.");
+		return false;
+	}
+}
+if((MyFirstForm.gender[0].checked == false) && (MyFirstForm.gender[1].checked == false) && (MyFirstForm.gender[2].checked == false) && (MyFirstForm.gender[3].checked == false){
+	alert("Please select one of the gender choices.");
+	return false
+}
+
+</script>
+<meta name=viewport content=width=device-width, initial-scale=1.0>
+</head>
+<body>
+<h1>Admission and Applications</h1>
+<button onclick="if(confirm('Do you want to head back to the homepage?')) window.location='Project homepage.html'">
+Back to Homepage
+</button>
+<form name=MyFirstForm onsubmit="return validateForm();return validateFormlname();return validateFormbothemptyname();return validateLettersfname();return validateLetterslname()wwwwww">
+<table>
+<tr>
+<td>
+First Name: 
+</td>
+</tr>
+<tr>
+<td>
+<input type=text name=fname placeholder='First Name' autofocus>
+</td>
+</tr>
+
+<tr>
+<td>
+Last Name:
+</td>
+</tr>
+<tr>
+<td>
+<input type=text name=lname placeholder='Last Name' autofocus>
+</td>
+</tr>
+
+<tr>
+<td>
+Gender:
+<input type=radio name=gender value=Male> Male
+<input type=radio name=gender value=Female> Female
+<input type=radio name=gender value=Enby> NB
+<input type=radio name=gender value=Gfluid> GenderFluid
+</td>
+</tr>
+
+<tr>
+<td>
+Select Course:</td></tr>
+<tr><td>
+<input type=checkbox name=fav_sub value=MSP1009>MSP1009 - Mobile Suit Programming</br>
+<input type=checkbox name=fav_sub value=BCA0001 checked>BCA0001 - Basic Computer Anatomy</br>
+<input type=checkbox name=fav_sub value=SCM0089>SCM0089 - Spacecraft Computer Maintenance</br>
+<input type=checkbox name=fav_sub value=SEM1100>SEM1100 - Survival Equipment Maintenance & Repair</br>
+</td>
+</tr>
+
+<tr>
+<td>
+Address: <textarea rows=4 cols=30 name=address></textarea>
+</td>
+</tr>
+<tr><td> (Side, Colony, City, District, Street, Address)</td></tr>
+
+<tr>
+<td>
+Date of Birth(UC Calendar): <input type=date name=dob min=0001-01-01 max=0070-12-31>
+</td>
+</tr>
+
+<tr>
+<td>
+Provided Application Passkey:
+<input type=password name=loginpass minlength=9 maxlength=20> 
+</td>
+</tr>
+
+<tr>
+<td>
+Preferred First Course:
+<select>
+<option value="0" selected>-List of Courses-</option>
+<option value="MSP">Mobile Suit Programming</option>
+<option value="BCA">Basic Computer Anatomy</option>
+<option value="SCM">Spacecraft Computer Maintenance</option>
+<option value="SEM">Survival Equipment Maintenance & Repair</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<input type=submit value=Submit>
+<input type=reset value=Reset>
+</td></tr>
+
+</table>
+<h1 class=bodytext> So, you have decided to apply to S7SC. <br>To send in an application, Enter your first and last names, gender, available course, the Passkey you were provided with after mailing in a request to S7SC, and your one preferred first course before submitting.<br><br><br>
+Please double-check your information before submitting!</h1>
+</body>
+</html>
